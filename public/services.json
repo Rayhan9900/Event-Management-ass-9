@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Personal Training",
+        "image": "https://i.ibb.co/KGXYyjR/2.webp",
+        "price": 50,
+        "description": "One-on-one personal training sessions tailored to your fitness goals.",
+        "button": "specific "
+    },
+    {
+        "id": 2,
+        "name": "Group Fitness Classes",
+        "image": "https://i.ibb.co/2YjLQsN/Group-Fitness.jpg",
+        "price": 270,
+        "description": "Fun and energetic group fitness classes suitable for all fitness levels.",
+        "button": "specific"
+    },
+    {
+        "id": 3,
+        "name": "Sports Massage Therapy",
+        "image": "https://i.ibb.co/C9YKTWg/Massage.jpg",
+        "price": 80,
+        "description": "Relaxing and therapeutic massages to aid in recovery and reduce muscle soreness.",
+        "button": "specific "
+    },
+    {
+        "id": 4,
+        "name": "Nutrition Consultation",
+        "image": "https://i.ibb.co/qMQ6sKb/Nutrition.jpg",
+        "price": 120,
+        "description": "Expert guidance on nutrition and meal planning for peak sports performance.",
+        "button": "specific "
+    },
+    {
+        "id": 5,
+        "name": "Sports Gear Rental",
+        "image": "https://i.ibb.co/2FJpdMF/Gear.jpg",
+        "price": 250,
+        "description": "Rent sports equipment like bikes, kayaks, and more for your adventures.",
+        "button": "specific "
+    },
+    {
+        "id": 6,
+        "name": "Sports Camps for Kids",
+        "image": "https://i.ibb.co/hf5TkrM/camps.jpg",
+        "price": 200,
+        "description": "Exciting sports camps to keep kids active and engaged during vacations.",
+        "button": "specific "
+    }
+]
