@@ -1,8 +1,48 @@
-import React from 'react'
-import Navber from '../Navber/Navber'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../Providers/AuthProvider';
 
 function Register() {
+
+    const { createUser } = useContext(AuthContext);
+
+    const [registerError, setRegisterError] = useState('');
+    const [success, setSuccess] = useState('');
+
+    const handleLogin = e => {
+        e.preventDefault();
+        console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const email = form.get('email');
+        const password = form.get('password')
+        console.log(name, email, password);
+
+        setRegisterError('');
+        setSuccess('');
+
+        if (password.length < 6) {
+            setRegisterError('Password should be at least 6 characters or longar');
+            return
+        }
+        else if (!accepted) {
+            setRegisterError('Please accept our terms and condition');
+            return
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setRegisterError('Your password should have at least one upper case charecters');
+            return
+        }
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                setSuccess('user created successfully');
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
 
     return (
@@ -10,10 +50,10 @@ function Register() {
             <div className="hero min-h-screen bg-[url('https://i.ibb.co/fHWRs8Z/resiter.jpg')]">
                 <div className="hero-content flex-col ">
                     <div className="text-center ">
-                        <h1 className="text-5xl font-bold">Please register now!</h1>
+                        <h1 className="text-5xl font-bold">Please Register Now!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -35,12 +75,21 @@ function Register() {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                            <div className="form-control mt-2">
+                                <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
+
+                        {
+                            registerError && <p className='text-blue-700'>{registerError}</p>
+                        }
+                        {
+                            success && <p className="text-green-600" >{success}</p>
+                        }
+
+
                         <Link to="/login">
-                            <p>already have an account <button>Login</button></p>
+                            <p>already have an account? <button className='text-blue-500 underline'>Login</button></p>
                         </Link>
                     </div>
                 </div>

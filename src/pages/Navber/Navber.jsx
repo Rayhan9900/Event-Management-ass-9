@@ -1,14 +1,26 @@
-import React from 'react'
-import { NavLink, } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, NavLink, } from 'react-router-dom'
 
 import Logo from '../../assets/logo.avif'
+import { AuthContext } from '../../Providers/AuthProvider'
 
 function Navber() {
+
+    const { user, logOut } = useContext(AuthContext);
+
+
+    const handleSingOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
 
     const navberLink = <>
         <li><NavLink to="/home" >Home</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
         <li><NavLink to="/register">register</NavLink></li>
+        <li><NavLink to="/order">Order</NavLink></li>
     </>
 
     return (
@@ -23,7 +35,7 @@ function Navber() {
                     </ul>
                 </div>
                 <img className='rounded-full w-12 h-12' src={Logo} alt="" />
-                <a className="text-lime-300 font-dancing text-xl ml-2  ">SPORTS</a>
+                <a className="text-lime-300 font-dancing text-xl ml-2 ">SPORTS</a>
 
             </div >
             <div className="navbar-center text-white hidden lg:flex">
@@ -31,9 +43,18 @@ function Navber() {
                     {navberLink}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
-            </div>
+            {
+                user ?
+                    <button onClick={handleSingOut} className='btn'>Sign Out</button>
+                    :
+                    <Link to="/login">
+                        <button className='Navber-end  btn '>Login</button>
+                    </Link>
+
+            }
+
+
+
 
         </div >
     )
