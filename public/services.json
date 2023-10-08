@@ -5,6 +5,7 @@
         "image": "https://i.ibb.co/KGXYyjR/2.webp",
         "price": 50,
         "description": "One-on-one personal training sessions tailored to your fitness goals.",
+        "description_2": "Picture a sun-drenched stadium, the roar of the crowd echoing through the air as two teams battle it out on the field. Athletes, their bodies honed to perfection through years of training, display remarkable skill and athleticism as they compete for victory. The tension is palpable, and every move they make is met with cheers or groans from the passionate fans. Whether it's the grace of a gymnast on the balance beam, the power of a boxer in the ring, or the precision of a golfer sinking a crucial putt, sports are a testament to human determination, discipline, and the pursuit of greatness.",
         "button": "specific "
     },
     {
@@ -13,6 +14,7 @@
         "image": "https://i.ibb.co/2YjLQsN/Group-Fitness.jpg",
         "price": 270,
         "description": "Fun and energetic group fitness classes suitable for all fitness levels.",
+        "description_2": "Picture a sun-drenched stadium, the roar of the crowd echoing through the air as two teams battle it out on the field. Athletes, their bodies honed to perfection through years of training, display remarkable skill and athleticism as they compete for victory. The tension is palpable, and every move they make is met with cheers or groans from the passionate fans. Whether it's the grace of a gymnast on the balance beam, the power of a boxer in the ring, or the precision of a golfer sinking a crucial putt, sports are a testament to human determination, discipline, and the pursuit of greatness.",
         "button": "specific"
     },
     {
@@ -21,6 +23,7 @@
         "image": "https://i.ibb.co/C9YKTWg/Massage.jpg",
         "price": 80,
         "description": "Relaxing and therapeutic massages to aid in recovery and reduce muscle soreness.",
+        "description_2": "Picture a sun-drenched stadium, the roar of the crowd echoing through the air as two teams battle it out on the field. Athletes, their bodies honed to perfection through years of training, display remarkable skill and athleticism as they compete for victory. The tension is palpable, and every move they make is met with cheers or groans from the passionate fans. Whether it's the grace of a gymnast on the balance beam, the power of a boxer in the ring, or the precision of a golfer sinking a crucial putt, sports are a testament to human determination, discipline, and the pursuit of greatness.",
         "button": "specific "
     },
     {
@@ -29,6 +32,7 @@
         "image": "https://i.ibb.co/qMQ6sKb/Nutrition.jpg",
         "price": 120,
         "description": "Expert guidance on nutrition and meal planning for peak sports performance.",
+        "description_2": "Picture a sun-drenched stadium, the roar of the crowd echoing through the air as two teams battle it out on the field. Athletes, their bodies honed to perfection through years of training, display remarkable skill and athleticism as they compete for victory. The tension is palpable, and every move they make is met with cheers or groans from the passionate fans. Whether it's the grace of a gymnast on the balance beam, the power of a boxer in the ring, or the precision of a golfer sinking a crucial putt, sports are a testament to human determination, discipline, and the pursuit of greatness.",
         "button": "specific "
     },
     {
@@ -37,6 +41,7 @@
         "image": "https://i.ibb.co/2FJpdMF/Gear.jpg",
         "price": 250,
         "description": "Rent sports equipment like bikes, kayaks, and more for your adventures.",
+        "description_2": "Picture a sun-drenched stadium, the roar of the crowd echoing through the air as two teams battle it out on the field. Athletes, their bodies honed to perfection through years of training, display remarkable skill and athleticism as they compete for victory. The tension is palpable, and every move they make is met with cheers or groans from the passionate fans. Whether it's the grace of a gymnast on the balance beam, the power of a boxer in the ring, or the precision of a golfer sinking a crucial putt, sports are a testament to human determination, discipline, and the pursuit of greatness.",
         "button": "specific "
     },
     {
@@ -45,6 +50,7 @@
         "image": "https://i.ibb.co/hf5TkrM/camps.jpg",
         "price": 200,
         "description": "Exciting sports camps to keep kids active and engaged during vacations.",
+        "description_2": "Picture a sun-drenched stadium, the roar of the crowd echoing through the air as two teams battle it out on the field. Athletes, their bodies honed to perfection through years of training, display remarkable skill and athleticism as they compete for victory. The tension is palpable, and every move they make is met with cheers or groans from the passionate fans. Whether it's the grace of a gymnast on the balance beam, the power of a boxer in the ring, or the precision of a golfer sinking a crucial putt, sports are a testament to human determination, discipline, and the pursuit of greatness.",
         "button": "specific "
     }
 ]

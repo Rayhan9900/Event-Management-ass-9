@@ -6,10 +6,9 @@ AOS.init();
 
 function ServiceCard({ service }) {
     const { id, name, image, description, price, button } = service;
-    console.log(name)
     return (
         <div>
-            <div className="card w-64 lg:w-96 glass ">
+            <div className="card w-64 lg:w-96 glass">
                 <figure><img src={image} alt="car!" className='w-96 h-48' /></figure>
                 <div className="">
                     <h2 className="text-white text-2xl">{name}</h2>

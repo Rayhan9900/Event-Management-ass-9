@@ -1,13 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../Providers/AuthProvider';
+import toast from 'react-hot-toast';
 
 function Register() {
 
     const { createUser } = useContext(AuthContext);
 
-    const [registerError, setRegisterError] = useState('');
-    const [success, setSuccess] = useState('');
+
 
     const handleLogin = e => {
         e.preventDefault();
@@ -18,29 +18,29 @@ function Register() {
         const password = form.get('password')
         console.log(name, email, password);
 
-        setRegisterError('');
-        setSuccess('');
 
-        if (password.length < 6) {
-            setRegisterError('Password should be at least 6 characters or longar');
+
+        if (password.length <= 6) {
+            toast.error('Password should be at least 6 characters or longar');
             return
         }
-        else if (!accepted) {
-            setRegisterError('Please accept our terms and condition');
-            return
-        }
+
         else if (!/[A-Z]/.test(password)) {
-            setRegisterError('Your password should have at least one upper case charecters');
+            toast.error('Your password should have at least one upper case charecters');
             return
+        }
+
+        else if (!/[!@#$%^&*]/.test(password)) {
+            toast.error("don't have a special character")
         }
 
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
-                setSuccess('user created successfully');
+                toast.success('user created successfully');
             })
             .catch(error => {
-                console.log(error)
+                toast.error(error.message)
             })
     }
 
@@ -79,14 +79,6 @@ function Register() {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
-
-                        {
-                            registerError && <p className='text-blue-700'>{registerError}</p>
-                        }
-                        {
-                            success && <p className="text-green-600" >{success}</p>
-                        }
-
 
                         <Link to="/login">
                             <p>already have an account? <button className='text-blue-500 underline'>Login</button></p>

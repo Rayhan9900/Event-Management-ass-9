@@ -12,13 +12,22 @@ function Home() {
     const instructors = useLoaderData();
     console.log(instructors)
 
+    const trestimonial = useLoaderData()
+
 
     return (
         <div className=''>
             <Banner></Banner>
             <Services />
             <Instructor instructors={instructors}></Instructor>
-            <Testimonial></Testimonial>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                {
+                    trestimonial.map(item => <Testimonial
+                        key={item.id}
+                        trestimonial={item}>
+                    </Testimonial>)
+                }
+            </div>
             <Footer></Footer>
 
 

@@ -2,19 +2,19 @@
     {
         "id": 1,
         "name": "John Doe",
-        "img": "https://i.ibb.co/6BHS2vZ/insturctor.jpg",
+        "img": "https://i.ibb.co/w6Nf5Tm/Istructor1.jpg",
         "position": "Lead Instructor"
     },
     {
         "id": 2,
         "name": "Jane Smith",
-        "img": "https://i.ibb.co/d2jJbhG/Whats-App-Image-2023-10-07-at-12-35-12-PM.jpg",
+        "img": "https://i.ibb.co/H2FCDT8/insturctor.jpg",
         "position": "Assistant Instructor"
     },
     {
         "id": 3,
         "name": "David Johnson",
-        "img": "https://i.ibb.co/3cFgrz6/Whats-App-Image-2023-10-07-at-12-35-12-PM-2.jpg",
+        "img": "https://i.ibb.co/jRgLH5D/client.jpg",
         "position": "Guest Instructor"
     }
 ]

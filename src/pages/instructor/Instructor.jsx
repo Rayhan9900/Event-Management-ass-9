@@ -3,8 +3,8 @@ import React, { useRef, } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/navigation';
 
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -13,8 +13,6 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 function Instructor({ instructors }) {
 
-    // const progressCircle = useRef(null);
-    // const progressContent = useRef(null);
 
     return (
         <div className='mt-20 '>
@@ -35,11 +33,13 @@ function Instructor({ instructors }) {
                 className="mySwiper"
             >
                 {
-                    instructors.map(instructor =>
-                        <SwiperSlide key={instructor.id}>
-                            <img className='w-64 h-48' src={instructor.img} alt="" />
-                            <p>{instructor.name}</p>
-                            <p>{instructor.position}</p>
+                    instructors.map(({ id, img, name, position }) =>
+                        <SwiperSlide key={id}>
+                            <div className='flex flex-col gap-5 justify-center items-center'>
+                                <img className='w-64 h-48' src={img} alt="" />
+                                <p>{name}</p>
+                                <p>{position}</p>
+                            </div>
                         </SwiperSlide>
                     )
                 }
@@ -47,17 +47,6 @@ function Instructor({ instructors }) {
             </Swiper>
 
 
-
-
-
-            {/* <Swiper
-                effect={'cards'}
-                grabCursor={true}
-                modules={[EffectCards]}
-                className="mySwiper"
-            >
-               
-            </Swiper> */}
 
         </div>
     )

@@ -17,10 +17,12 @@ function Navber() {
 
 
     const navberLink = <>
-        <li><NavLink to="/home" >Home</NavLink></li>
+        <li><NavLink to="/" >Home</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
         <li><NavLink to="/register">register</NavLink></li>
-        <li><NavLink to="/order">Order</NavLink></li>
+        <li><NavLink to="/blog">Blog</NavLink></li>
+        <li><NavLink to="/allservices">All Services</NavLink></li>
+        {/* <img src={user.photoURL} alt="" /> */}
     </>
 
     return (

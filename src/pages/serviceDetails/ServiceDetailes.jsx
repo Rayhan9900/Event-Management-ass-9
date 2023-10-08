@@ -1,25 +1,37 @@
 
 import { useEffect, useState } from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
-import Services from '../services-section/Services'
-import ServiceCard from '../services-section/ServiceCard'
+import ServiceDCard from './ServiceDCard'
 
 function ServiceDetailes() {
-    const [details, setDetailes] = useState({})
+    const serviceD = useLoaderData()
+    console.log(serviceD)
 
-    const { id, } = useParams()
+    const [details, setDetailes] = useState([])
 
-    const servicedetails = useLoaderData()
+
+
+    const { id } = useParams()
+
 
     useEffect(() => {
-        const findDetails = Services?.find(details => details.id === id)
-        setDetailes(findDetails)
+        const serviceDetails = serviceD.find(item => item.id === id);
+        setDetailes(serviceDetails)
+    }, [serviceD, id])
 
-    }, [id, servicedetails])
+
 
     return (
         <div>
-            <ServiceCard details={details}></ServiceCard>
+            <ServiceDCard details={details}></ServiceDCard>
+            {/* {
+                details.map(detail =>
+                    <ServiceDCard
+                        key={detail.id}
+                        detail={detail}
+                    />)
+            } */}
+
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Providers/AuthProvider';
+import toast from 'react-hot-toast';
 
 function Login() {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, signInGoogle } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
 
@@ -15,15 +16,27 @@ function Login() {
         const password = form.get('password')
         console.log(email, password);
 
+        // const handleGoogle = () => {
+        //     signInGoogle()
+        //         .then(result => {
+        //             console.log(result.user)
+        //         })
+        //         .catch(error => {
+        //             console.log(error)
+        //         })
+        // }
+
         signIn(email, password)
             .then(result => {
                 console.log(result.user)
-
                 navigate(location?.state ? location.state : "/")
+                toast.success('Login Successful')
             })
             .catch(error => {
-                console.log(error)
+                toast.error(error.message)
             })
+
+
     }
 
     return (
@@ -54,9 +67,8 @@ function Login() {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
-                        <NavLink to="/register" >
-                            <p className=''>Don't have an account please <button className='text-cyan-500 underline ' >Registe</button></p>
-                        </NavLink>
+                        <p className=''>Don't have an account please <Link to="/register"><button className='text-cyan-500 underline '>Registe</button></Link> </p>
+                        {/* <p><button onClick={handleGoogle}>Google</button></p> */}
                     </div>
                 </div>
             </div>

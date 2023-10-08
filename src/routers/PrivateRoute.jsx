@@ -25,8 +25,6 @@ function PrivateRoute({ children }) {
         return children;
     }
 
-
-
     return <Navigate to="/login"></Navigate>
 
 

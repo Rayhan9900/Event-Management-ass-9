@@ -5,9 +5,11 @@ import Root from "../layout/Root";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/errorPage/ErrorPage";
-import ServiceDetailes from "../pages/serviceDetails/ServiceDetailes";
 import PrivateRoute from "./PrivateRoute";
-import Order from "../pages/order/Order";
+
+import ServiceDetailes from "../pages/serviceDetails/ServiceDetailes";
+import Blog from "../pages/blog/Blog";
+import AllServices from "../pages/all services/AllServices";
 
 const router = createBrowserRouter([
     {
@@ -18,12 +20,14 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch('/instructor.json')
+                loader: () => fetch('/instructor.json'),
+                loader: () => fetch('/trstimonial.json')
+
             },
             {
                 path: "/service/:id",
-                element: <PrivateRoute> <ServiceDetailes /></PrivateRoute>,
-                loader: () => fetch('/services.json')
+                element: <ServiceDetailes />,
+                loader: () => fetch(`/services.json`)
             },
 
 
@@ -36,8 +40,12 @@ const router = createBrowserRouter([
                 element: <Register />
             },
             {
-                path: "/order",
-                element: <PrivateRoute><Order /></PrivateRoute>
+                path: "/blog",
+                element: <PrivateRoute><Blog></Blog></PrivateRoute>
+            },
+            {
+                path: "/allservices",
+                element: <PrivateRoute> <AllServices></AllServices></PrivateRoute>
             }
 
 
