@@ -18,11 +18,21 @@ function Navber() {
 
     const navberLink = <>
         <li><NavLink to="/" >Home</NavLink></li>
-        <li><NavLink to="/login">Login</NavLink></li>
+        {/* <li><NavLink to="/login">Login</NavLink></li> */}
         <li><NavLink to="/register">register</NavLink></li>
         <li><NavLink to="/blog">Blog</NavLink></li>
         <li><NavLink to="/allservices">All Services</NavLink></li>
-        {/* <img src={user.photoURL} alt="" /> */}
+
+        {
+            user ?
+                <button onClick={handleSingOut} className='btn btn-secondary'>Sign Out</button>
+                :
+                <Link to="/login"><button className='Navber-end btn btn-secondary '>Login</button>
+                </Link>
+        }
+
+        {user && <p className='pt-4 mx-4'>{user.displayName}</p>}
+        {user && <img src={user.photoURL} className='w-12 h-12 rounded-full' alt="" />}
     </>
 
     return (
@@ -45,15 +55,6 @@ function Navber() {
                     {navberLink}
                 </ul>
             </div>
-            {
-                user ?
-                    <button onClick={handleSingOut} className='btn'>Sign Out</button>
-                    :
-                    <Link to="/login">
-                        <button className='Navber-end  btn '>Login</button>
-                    </Link>
-
-            }
 
 
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { TypeAnimation } from 'react-type-animation';
 
 function Testimonial({ trestimonial }) {
 
@@ -8,6 +9,34 @@ function Testimonial({ trestimonial }) {
 
     return (
         <div className='mt-20'>
+
+            <div className='mb-8'>
+
+                <TypeAnimation className='text-accent text-3xl'
+                    sequence={[
+                        '',
+                        500,
+                        'C',
+                        500,
+                        'CL',
+                        500,
+                        'CLI',
+                        500,
+                        'CLIE',
+                        500,
+                        'CLIEN',
+                        500,
+                        'CLIENT',
+                        500,
+
+                    ]}
+                    speed={100}
+
+                    style={{ fontSize: '2em', }}
+                    repeat={Infinity}
+                />
+            </div>
+
             <div className="h-96 rounded-xl glass shadow-xl">
                 <img src={image_url} alt="Album" className='rounded-full w-36 h-36 ml-28 ' />
                 <div className="mt-12">

@@ -5,6 +5,7 @@ import Testimonial from '../testimonial/Testimonial'
 import Instructor from '../instructor/Instructor'
 import Footer from '../footer/Footer'
 import { useLoaderData } from 'react-router-dom'
+import { TypeAnimation } from 'react-type-animation'
 
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
             <Banner></Banner>
             <Services />
             <Instructor instructors={instructors}></Instructor>
+
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                 {
                     trestimonial.map(item => <Testimonial

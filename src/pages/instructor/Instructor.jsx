@@ -1,5 +1,5 @@
 
-import React, { useRef, } from 'react';
+import React, { useEffect, useRef, useState, } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -8,15 +8,57 @@ import 'swiper/css';
 
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { TypeAnimation } from 'react-type-animation';
 
 
 
-function Instructor({ instructors }) {
+function Instructor() {
+    const [instructors, setInstructors] = useState([]);
+
+
+
+    useEffect(() => {
+        fetch('/instructor.json')
+            .then(res => res.json())
+            .then(data => setInstructors(data))
+    }, [])
 
 
     return (
         <div className='mt-20 '>
-            <h2 className="text-3xl">Instuctor</h2>
+
+            <div className='mb-8'>
+                <TypeAnimation className='text-accent text-3xl'
+                    sequence={[
+                        '',
+                        500,
+                        'I',
+                        500,
+                        'IN',
+                        500,
+                        'INS',
+                        500,
+                        'INST',
+                        500,
+                        'INSTR',
+                        500,
+                        'INSTRU',
+                        500,
+                        'INSTRUC',
+                        500,
+                        'INSTRUCT',
+                        500,
+                        'INSTRUCTO',
+                        500,
+                        'INSTRUCTOR',
+                        500,
+                    ]}
+                    speed={100}
+
+                    style={{ fontSize: '2em', }}
+                    repeat={Infinity}
+                />
+            </div>
 
             <Swiper
                 spaceBetween={30}

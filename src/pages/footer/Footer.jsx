@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className="footer  p-10 bg-yellow-400 mt-16  text-white-content">
+        <footer className="footer  p-10 bg-yellow-400 mt-16 rounded-b-lg  text-white-content">
 
             <nav className='text-white'>
                 <header className="footer-title text-pink-700 ">Services</header>
@@ -24,10 +24,10 @@ function Footer() {
                     <label className="label">
                         <span className="label-text text-white">Enter your email address</span>
                     </label>
-                    <div className="relative">
-                        <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
+                    {/* <div className="relative">
+                        <input type="text" placeholder="username@site.com" className="input input-bordered w-1/2 md:w-full md:pr-16" />
                         <button className="btn btn-primary absolute top-0 right-0 rounded-l-none"></button>
-                    </div>
+                    </div> */}
                 </fieldset>
             </form>
         </footer>

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Providers/AuthProvider';
 import toast from 'react-hot-toast';
+import { FcGoogle } from 'react-icons/fc'
 
 function Login() {
     const { signIn, signInGoogle } = useContext(AuthContext);
@@ -16,15 +17,6 @@ function Login() {
         const password = form.get('password')
         console.log(email, password);
 
-        // const handleGoogle = () => {
-        //     signInGoogle()
-        //         .then(result => {
-        //             console.log(result.user)
-        //         })
-        //         .catch(error => {
-        //             console.log(error)
-        //         })
-        // }
 
         signIn(email, password)
             .then(result => {
@@ -35,28 +27,36 @@ function Login() {
             .catch(error => {
                 toast.error(error.message)
             })
+    }
 
-
+    const handleGoogle = () => {
+        signInGoogle()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (
         <div>
-            <div className="hero min-h-screen bg-[url('https://i.ibb.co/RDDjrDp/Login-2.jpg')]">
-                <div className="hero-content flex-col ">
+            <div className="hero  bg-[url('https://i.ibb.co/RDDjrDp/Login-2.jpg')]">
+                <div className="md:hero-content flex-col ">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold">Please Login now!</h1>
+                        <h1 className="text-2xl md:text-5xl mt-4 md:mt-0 font-bold">Please Login now!</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card md:flex-shrink-0 md:w-full w-64 mt-8 md:mt-0 shadow-2xl bg-base-100 ">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text ">Email</span>
                                 </label>
                                 <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text ">Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
@@ -67,8 +67,10 @@ function Login() {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
-                        <p className=''>Don't have an account please <Link to="/register"><button className='text-cyan-500 underline '>Registe</button></Link> </p>
-                        {/* <p><button onClick={handleGoogle}>Google</button></p> */}
+                        <p className=''>Don't have an account please ? <Link to="/register"><button className='text-cyan-500 underline '>Registe</button></Link> </p>
+                        <div className="divider">OR</div>
+
+                        <button className='flex justify-center items-center gap-4 border-2 border-white py-2 text-accent' onClick={handleGoogle}> <FcGoogle size={30} /> Google</button>
                     </div>
                 </div>
             </div>

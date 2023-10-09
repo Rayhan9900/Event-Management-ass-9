@@ -15,7 +15,7 @@ function ServiceDetailes() {
 
 
     useEffect(() => {
-        const serviceDetails = serviceD.find(item => item.id === id);
+        const serviceDetails = serviceD.find(item => item.id == id);
         setDetailes(serviceDetails)
     }, [serviceD, id])
 
@@ -24,13 +24,7 @@ function ServiceDetailes() {
     return (
         <div>
             <ServiceDCard details={details}></ServiceDCard>
-            {/* {
-                details.map(detail =>
-                    <ServiceDCard
-                        key={detail.id}
-                        detail={detail}
-                    />)
-            } */}
+
 
         </div>
     )
