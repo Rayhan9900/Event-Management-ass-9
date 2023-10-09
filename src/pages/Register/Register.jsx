@@ -81,7 +81,7 @@ function Register() {
                         </form>
 
                         <Link to="/login">
-                            <p>already have an account? <button className='text-blue-500 underline'>Login</button></p>
+                            <p>already have an account ? <button className='text-blue-500 underline'>Login</button></p>
                         </Link>
                     </div>
                 </div>
